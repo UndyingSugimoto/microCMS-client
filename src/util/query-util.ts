@@ -45,14 +45,14 @@ export class QueryParamaterFactory {
         return this;
     };
     addFilters = (filters?: Filters[]) => {
-        this.params = filters
-            ? this.params +
-              filters
-                  .map((filter) => {
-                      return `${filter.key}[${filter.filterType}]${filter.value}&`;
-                  })
-                  .join()
-            : this.params;
+        if (filters) {
+            const filterStr = filters
+                .map((filter) => {
+                    return `${filter.key}[${filter.filterType}]${filter.value}`;
+                })
+                .join();
+            this.params = `${this.params}filters=${filterStr}&`;
+        }
         return this;
     };
     toParams = () => {
@@ -85,12 +85,14 @@ export const addOffset = (queryParams: string, offset?: number) => {
 };
 
 export const addFilters = (queryParams: string, filters?: Filters[]) => {
-    return filters
-        ? queryParams +
-              filters
-                  .map((filter) => {
-                      return `${filter.key}[${filter.filterType}]${filter.value}&`;
-                  })
-                  .join()
-        : queryParams;
+    if (filters) {
+        const filterStr = filters
+            .map((filter) => {
+                return `${filter.key}[${filter.filterType}]${filter.value}`;
+            })
+            .join();
+        return `${queryParams}filters=${filterStr}&`;
+    } else {
+        return queryParams;
+    }
 };
