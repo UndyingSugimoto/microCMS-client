@@ -1,6 +1,7 @@
 # microCMS-client
 This is a microCMS client for javascript and typeScript.
-microCMS is a CMS made in Japan.
+The microCMS is made in Japan. Plus, it's very cool.
+[microCMS can be found here.](https://microcms.io/)
 
 ## install
 npm
