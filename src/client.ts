@@ -1,12 +1,15 @@
 import axios, { AxiosRequestConfig } from 'axios';
+import { GetContentParams, getContentQuery } from './query/get-content';
+import { Data } from './types/data';
+import { GetContentsParams, getContentsQuery } from './query/get-contents';
 
-type ClientConfig = {
+export type ClientConfig = {
     contentType?: string;
     X_API_KEY: string;
     baseUrl: string;
 };
 
-const createClient = (config: ClientConfig) => {
+export const createClient = (config: ClientConfig) => {
     const axiosConfig: AxiosRequestConfig = {
         baseURL: config.baseUrl,
         headers: {
@@ -16,7 +19,19 @@ const createClient = (config: ClientConfig) => {
     };
     const axiosClient = axios.create(axiosConfig);
 
-    return axiosClient;
+    const client: Client = {
+        getContent: (params: GetContentParams) => {
+            return getContentQuery(axiosClient, params);
+        },
+        getContents: (params: GetContentsParams) => {
+            return getContentsQuery(axiosClient, params);
+        },
+    };
+
+    return client;
 };
 
-export default createClient;
+export type Client = {
+    getContent: <T>(params: GetContentParams) => Promise<T & Data>;
+    getContents: <T>(params: GetContentsParams) => Promise<(T & Data)[]>;
+};

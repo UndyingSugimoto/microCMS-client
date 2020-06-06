@@ -3,5 +3,7 @@ declare type ClientConfig = {
     X_API_KEY: string;
     baseUrl: string;
 };
-declare const createClient: (config: ClientConfig) => import("axios").AxiosInstance;
+declare const createClient: (
+    config: ClientConfig
+) => import('axios').AxiosInstance;
 export default createClient;
