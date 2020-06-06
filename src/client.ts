@@ -17,7 +17,9 @@ export const createClient = (config: ClientConfig) => {
         headers: {
             'Content-Type': config.contentType,
             'X-API-KEY': config.X_API_KEY,
-            'X-WRITE-API-KEY': config.X_WRITE_API_KEY,
+            'X-WRITE-API-KEY': config.X_WRITE_API_KEY
+                ? config.X_WRITE_API_KEY
+                : '',
         },
     };
     const axiosClient = axios.create(axiosConfig);
