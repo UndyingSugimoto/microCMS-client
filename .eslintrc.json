@@ -1,39 +1,39 @@
 {
-  "env": {
-    "es6": true,
-    "node": true
-  },
-  // "processors": ["stylelint-processor-styled-components"],
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-    "prettier/@typescript-eslint"
-  ],
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
-  },
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaVersion": 11,
-    "sourceType": "module"
-  },
-  "plugins": ["@typescript-eslint", "node", "prettier"],
-  "rules": {
-    "indent": ["error", 4],
-    "linebreak-style": ["error", "unix"],
-    "quotes": [
-      "error",
-      "single",
-      { "avoidEscape": true, "allowTemplateLiterals": true }
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    // "processors": ["stylelint-processor-styled-components"],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended",
+        "prettier/@typescript-eslint"
     ],
-    "semi": ["error", "always"],
-    "prefer-template": ["error"],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "plugins": ["@typescript-eslint", "node", "prettier"],
+    "rules": {
+        "indent": ["error", 4],
+        "linebreak-style": ["error", "unix"],
+        "quotes": [
+            "error",
+            "single",
+            { "avoidEscape": true, "allowTemplateLiterals": true }
+        ],
+        "semi": ["error", "always"],
+        "prefer-template": ["error"],
 
-    // added by me
-    "prettier/prettier": ["error", { "single": true }],
-    "@typescript-eslint/explicit-module-boundary-types": "off"
-  }
+        // added by me
+        "prettier/prettier": ["error", { "single": true }],
+        "@typescript-eslint/explicit-module-boundary-types": "off"
+    }
 }
