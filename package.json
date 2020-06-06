@@ -1,6 +1,6 @@
 {
     "name": "microcms-client",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "this is microCMS client for TypeScript.",
     "main": "index.js",
     "repository": "git@github.com:UndyingSugimoto/microCMS-client.git",
