@@ -1,0 +1,39 @@
+{
+    "name": "microcms-client",
+    "version": "0.0.1",
+    "description": "this is microCMS client for TypeScript.",
+    "main": "index.js",
+    "repository": "git@github.com:UndyingSugimoto/microCMS-client.git",
+    "author": "UndyingSugimoto",
+    "license": "MIT",
+    "scripts": {
+        "start": "yarn build:live",
+        "lint": "npx eslint '**/*.{ts}'",
+        "lint:fix": "npx eslint '**/*.{ts}' --fix",
+        "build": "tsc -p .",
+        "build:live": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
+    },
+    "dependencies": {
+        "typescript": "^3.9.5"
+    },
+    "keywords": [
+        "microCMS",
+        "CMS",
+        "TypeScript",
+        "JavaScript"
+    ],
+    "devDependencies": {
+        "eslint": "^7.2.0",
+        "prettier": "^2.0.5",
+        "nodemon": "^2.0.4",
+        "ts-node": "^8.10.2",
+        "@types/jest": "^25.2.2",
+        "@types/node": "^14.0.1",
+        "eslint-config-airbnb": "^18.1.0",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-prettier": "^3.1.3",
+        "jest": "^26.0.1",
+        "stylelint-config-recommended": "^3.0.0"
+    }
+}
