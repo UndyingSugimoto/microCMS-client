@@ -1,9 +1,13 @@
-declare type ClientConfig = {
+import { GetContentParams } from './query/get-content';
+import { Data } from './types/data';
+import { GetContentsParams } from './query/get-contents';
+export declare type ClientConfig = {
     contentType?: string;
     X_API_KEY: string;
     baseUrl: string;
 };
-declare const createClient: (
-    config: ClientConfig
-) => import('axios').AxiosInstance;
-export default createClient;
+export declare const createClient: (config: ClientConfig) => Client;
+export declare type Client = {
+    getContent: <T>(params: GetContentParams) => Promise<T & Data>;
+    getContents: <T>(params: GetContentsParams) => Promise<(T & Data)[]>;
+};
