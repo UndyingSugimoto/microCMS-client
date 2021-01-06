@@ -14,7 +14,7 @@
         "build:live": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts"
     },
     "dependencies": {
-        "axios": "^0.19.2",
+        "axios": "^0.21.1",
         "typescript": "^3.9.5"
     },
     "keywords": [
